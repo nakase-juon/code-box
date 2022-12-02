@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+int main() {
+  int a;
+  
+  printf("");
+  scanf(__________);
+  printf("入力された値は___で、5で割った余りは___です。\n",___,___);
+
+  return 0;
+}

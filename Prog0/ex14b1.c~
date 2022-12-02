@@ -1,0 +1,53 @@
+#include <stdio.h>
+#define MAX 50
+
+void bmi_hantei(void);
+double  height[MAX],weight[MAX];
+
+int main() {
+  for(int i=0;i<MAX;i++){
+    scanf("%lf %lf",&height[i],&weight[i]);
+  }
+  printf("\n");
+  printf("\t\tBMI\t状態\n");
+  bmi_hantei();
+  return 0;
+}
+
+void bmi_hantei(void){
+  int flg1=0,flg2=0,flg3=0,flg4=0,flg5=0,flg6=0,flg7=0;
+  for(int i=0;i<MAX;i++){
+    double bmi=weight[i]/((height[i]/100)*(height[i]/100));
+    printf("%2d人目 %.1f\t",i+1,bmi);
+    if(bmi<18.5){
+      printf("やせている\n");
+      flg1++;
+    }else if(bmi>=18.5&&bmi<25){
+      printf("正常\n");
+      flg2++;
+    }else if(bmi>=25&&bmi<30){
+      printf("肥満(1度)\n");
+      flg3++;
+    }else if(bmi>=30&&bmi<35){
+      printf("肥満(2度)\n");
+      flg4++;
+    }else if(bmi>=35&&bmi<40){
+      printf("肥満(3度)\n");
+      flg5++;
+    }else if(bmi>=40){
+      printf("肥満(4度)\n");
+      flg6++;
+    }
+    flg7++;
+    if(height[i]==0.0){
+      break;
+    }
+  }
+  printf("\n");
+  printf("やせている%3d %%\n",flg1/flg7*100);
+  printf("正常\t\t%3d %%\n",flg2/flg7*100);
+  printf("肥満(1度)%3d %%\n",flg3/flg7*100);
+  printf("肥満(2度)%3d %%\n",flg4/flg7*100);
+  printf("肥満(3度)%3d %%\n",flg5/flg7*100);
+  printf("肥満(4度)%3d %%\n",flg6/flg7*100);
+}

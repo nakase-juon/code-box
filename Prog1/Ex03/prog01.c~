@@ -1,0 +1,45 @@
+    #include <stdio.h>
+    #include <stdlib.h>
+
+    int main(){
+    	char in_filename[] = "data01.in"; /* 文字配列の初期化は Lec04-14,15 参照 */
+    	char out_filename[] = "data01.out";
+    	FILE *fpin, *fpout;
+    	char c;
+    	
+    	/* 
+    	 * 読み込み専用でファイル data01.in を開く．
+    	 * ファイルオープンに失敗した場合はエラーを表示して終了する．
+    	 */
+    	if((fpin = fopen(in_filename, "r")) == NULL){
+    		printf("Failed to open: %s\n", in_filename);
+    		exit(1);
+    	}
+    	
+    	/*
+    	 * 書き込み専用でファイル data01.out を開く．
+    	 * ファイルオープンに失敗した場合はエラーを表示して終了する．
+    	 * その際，上で開いた入力ファイルを忘れずに閉じる．
+    	 */
+    	if((fpout = fopen(out_filename, "w")) == NULL){
+    		printf("Failed to open: %s\n", out_filename);
+    		fclose(fpin);
+    		exit(2);
+    	}
+    	
+    	/*
+    	 * fpin を介して入力ファイルから，1文字ずつ読み込み，
+    	 * そのまま fpout を介して出力ファイルに書き込む
+    	 * 入力ファイルを最後まで読み込んだら，ループを抜ける．
+    	 */
+    	 while(fscanf(fpin, "%c", &c) != EOF){
+    	 	fprintf(fpout, "%c", c);
+    	 }
+     
+    	/* 開いた入出力ファイルをそれぞれ忘れずに閉じる． */
+    	fclose(fpout);
+    	fclose(fpin);
+    	
+    	/* 正常終了を表す値0を返して終了する． */
+    	return 0;
+    }

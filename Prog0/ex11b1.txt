@@ -1,0 +1,7 @@
+・scanf value = 2 (a:3, b:5)
+・scanf value = 2 (a:2, b:4)
+・scanf value = 1 (a:3, b:32767)
+・scanf value = 1 (a:5, b:32767)
+・scanf value = 1 (a:3, b:32767)
+・scanf value = 0 (a:-1073745704, b:32767)
+・scanf value = -1 (a:-1073745704, b:32767)

@@ -1,0 +1,9 @@
+(o) int ave;
+(x) int while;     whileが予約語のため
+(x) int result#2;  #は変数名として使用できない
+(x) int 4th;       変数は最初の文字が数字ではいけないため
+(o) int _5th;
+(x) int no3  no4;  変数を二つ以上宣言するときは,で区切る必要がある
+(o) int no1, no2;
+(o) int sum_ave;
+(x) int sum-ave;   -は変数名として使用できない

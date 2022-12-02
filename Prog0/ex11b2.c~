@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int gcd(int, int);
+
+int main(){
+  int x,y;
+  while(1){
+    printf("Input two numbers\n");
+    scanf("%d %d",&x,&y);
+    if(x<0 || y<0){
+      printf("Input positive numbers again!\n");
+    }else if(x==0 || y==0){
+      break;
+    }else{
+      printf("GCD of %d and %d is %d.\n",x,y,gcd(a));
+    }
+  }
+  return 0;
+}
+
+int gcd(int x, int y){
+  int a;
+  while(a<=0){
+    a = y % x;
+  }
+  return a;
+}

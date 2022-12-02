@@ -1,0 +1,53 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int myatoi(char *);
+
+int main(){
+  char s[];
+  int n,m;
+  
+  if((n = myatoi(&s))==0){
+    printf("数字を読み取れません\n");
+    exit (2);
+  }
+  printf("和暦（H30,R等）:　");
+  scanf("%s",&s);
+  if(s[0]=='R'){
+    m=2019;
+  }else if(s[0]=='H'){
+    m=1989;
+  }else if(s[0]=='S'){
+    m=1926;
+  }else if(s[0]=='T'){
+    m=1912;
+  }else if(s[0]=='M'){
+    m=1868;
+  }
+  printf("西暦(A.D.): %d",m+n-1);
+  return 0;
+}
+
+int myatoi(char *x){
+  int a=1;
+  int ans=0;
+  for(int i=0;x[i]!='\0';i++){
+   if(x[i]!=' '){
+     break;
+    }else if(x[i]=='-'){
+      a = -1;
+      i++;
+    }else if(x[i]=='+'){
+      i++;
+    }
+    while(1){
+      if(x[i]>='0'&&x[i]<='9'){
+        ans=10*ans+(int)(x[i]-'0');
+        i++;
+      }else{
+	break;
+      }
+    }
+  }
+  return a*ans;
+}

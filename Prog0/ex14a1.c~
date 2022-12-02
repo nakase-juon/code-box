@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <math.h>
+
+double heron(double,double,double);
+
+int main() {
+  double x1,y1,x2,y2,x3,y3;
+  double ab,bc,ca;
+  
+  ab=sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1));
+  bc=sqrt((x3-x2)*(x3-x2)+(y3-y2)*(y3-y2));
+  ca=sqrt((x1-x3)*(x1-x3)+(y1-y3)*(y1-y3));
+  
+  printf("3点の座標 (x1,y1) , (x2,y2) , (x3,y3)  を入力:   ");
+  scanf("%lf %lf %lf %lf %lf %lf",&x1,&y1,&x2,&y2,&x3,&y3);
+  printf("点1−2間の長さは %f\n",ab);
+  printf("点2−3間の長さは %f\n",bc);
+  printf("点3−1間の長さは %f\n",ca);
+  printf("三角形の面積Areaは:   %f\n",heron(ab,bc,ca));
+}
+
+double heron(double a,double b,double c){
+  double s = (a+b+c) / 2.0;
+  return sqrt(s*(s-a)*(s-b)*(s-c));
+}

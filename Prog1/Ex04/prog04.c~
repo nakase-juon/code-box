@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+ 
+#define N 101 /* にはバッファ配列に最大文字数の単語を適切に格納可能な数値を指定する */
+ 
+int main(){
+ 
+	char dic_file[] = "word_dic.txt"; /* ??? には辞書ファイルのパスを指定する */
+	FILE *fp;
+	
+	char typein[N]; /* 入力用文字列バッファ */
+	char pickup[N]; /* 辞書単語用文字列バッファ */
+	
+	/* 無限ループ */
+	while(1){
+		printf("Input a word: ");
+		if(scanf("%s", typein) == EOF){
+		  /* ※1 補足3を参照 */
+			break;
+		}
+		/*
+		 * 辞書の先頭から単語の探索を行うために，
+		 * 新たに単語が入力されるごとに
+		 * 辞書ファイルのオープンとクローズを繰り返す
+		 */
+		
+		if((fp = fopen(dic_file, "r")) == NULL){
+			printf("Failed to open: %s\n", dic_file);
+			exit(2);
+		}
+		
+		/* 
+		 * ここに，辞書内の単語を1つずつ読み込みながら，
+		 * 入力された単語と一致するかをチェックする処理を追加せよ
+		 */
+		while(1){
+		  if(fscanf(fp,"%s",&pickup)==EOF){
+		    printf("The word \"%s\" is not found.\n\n",typein);
+		    break;
+		  }
+		  if(strcmp(typein,pickup)==0){
+		    printf("The word \"%s\" is found.\n\n",typein);
+		    break;
+		  }
+		}
+		fclose(fp);
+	}
+	
+	printf("\n");
+	return 0;
+}

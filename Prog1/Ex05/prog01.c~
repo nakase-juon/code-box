@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main()
+{
+   int i;
+   int array[] = {11,22,33,44};
+   double d_array[] = {1e-3, 2e-2, 3e+4, 4e+5};
+   long l_array[] = {123,234,345,456};
+   char c_array[] = {'a','b','c','d'};
+   char *str_array[] = {"A","BCDEF","G","HIJK"};
+   char c_2d_array[][10] = {"ab","cdef","ghij","klm"};
+   
+   for(i = 0 ; i < 4 ; i++)
+     printf( "%d %p %d\n",i,&array[i],array[i]);
+   printf("\n%p\n",array);
+
+   for(i = 0 ; i < 4 ; i++){
+     printf("%d %p %f\n",i,&d_array[i],d_array[i]);
+   }
+   for(i = 0 ; i < 4 ; i++){
+     printf("%d %p %ld\n",i,&l_array[i],l_array[i]);
+   }
+   for(i = 0 ; i < 4 ; i++){
+     printf("%d %p %c\n",i,&c_array[i],c_array[i]);
+   }
+   for(i = 0 ; i < 4 ; i++){
+     printf("%d %p %s\n",i,&str_array,str_array);
+   }
+   for(i = 0 ; i < 4 ; i++){
+     printf("%d %p %c\n",i,&c_2d_array[i],c_2d_array[i]);
+   }
+   return 0;
+}

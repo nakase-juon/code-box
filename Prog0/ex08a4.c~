@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+    int turu,kame,tent,flg=0;
+    for(turu=1;turu<=20;turu++){
+        kame=(32-4*turu)/2;
+        tent=(8+2*turu)/2;
+        if(turu+kame+tent==20 && 2*turu+4*kame+6*tent==88 && kame>0 && tent>0){
+            flg=1;
+            printf("turu=%d,kame=%d,tent=%d\n",turu,kame,tent);
+        }
+    }
+    if(flg==0){
+        printf("???\n");
+    }
+    return 0;
+}

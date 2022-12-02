@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+  int score,count=0,pass=0,drop=0;
+  double sum=0,ave=0;
+  while(score<0){
+    printf("得点を入力して下さい: ");
+    scanf("%d",&score);
+    count++;
+    sum+=score;
+    if(score>=50){
+      pass++;
+    }else if(score<50 && score>=0){
+      drop++;
+    }
+  }
+  ave=sum/count;
+  printf("受験者数 %d 名, 平均点 %f 点\n",count,ave);
+  printf("合格者数 %d 名, 不合格者数 %d 名\n",pass,drop);
+  return 0;
+}
+  

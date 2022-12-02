@@ -1,0 +1,25 @@
+#include<stdio.h>
+
+int main() {
+  int n,ans=0;
+  for(int i=0;i<5;i++){
+    printf("%d個目の整数を入力してください：",i);
+    scanf("%d",&n);
+    if(n<0){
+      printf("入力された整数が0以下なのでスキップします\n");
+    }else if(n==0){
+      printf("入力された整数が0なのでスキップします\n");
+    }else if(n==1){
+      printf("入力された整数が1なのでスキップします\n");
+    }else{
+      for(int j=2;j<n-1;j++){
+	if(n%j!=0){
+	  printf("%dは素数\n",n);
+	  ans++;
+	  break;
+	}
+      }
+    }
+  }
+  return 0;
+}

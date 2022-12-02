@@ -1,0 +1,10 @@
+(o) r = i + j;       3
+(o) r = i*j-k;       -1
+(o) r = i*(j-k);     -1
+(x) r = (i + (j-k);
+(x) i + j = r;
+(x) 2 = r;
+(o) r = k%(k-i)/j;   0
+(o) r = i = i + 1;   2
+(x) r = i**k;
+(x) r = i/0;

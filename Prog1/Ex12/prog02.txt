@@ -1,0 +1,10 @@
+main02.cの単体テスト
+gcc -DMAIN main02.c
+
+calc02.cの単体テスト
+gcc -DCALC calc02.c
+
+結合テスト
+gcc -c main02.c
+gcc -c calc02.c
+gcc main02.o calc02.o

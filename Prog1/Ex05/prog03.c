@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <string.h>
+
+#define NUM 4
+
+int main()
+{
+  char str2[NUM][20];   /* 入力用の文字配列 */
+  char newstr[81];      /* 出力用の文字配列 */
+  int i;
+  /* ここにその他の変数宣言 */
+  int j,k = 0;
+  char c;
+  printf( "Input %d words: \n", NUM );
+
+  for( i = 0; i < NUM; i++ ){
+    scanf("%s", str2[i]);
+  }
+
+  /* 入力済みのstr2をもとに、newstrを作成する処理を書く */
+  /* 単語間にスペースを入れる事と、最後はピリオドで終わることに注意 */
+  for( i = 0; i < NUM; i++){
+    for( j = 0; str2[i][j] != '\0' ; j++){
+      c = str2[i][j];
+      newstr[k++] = c;
+    }
+    newstr[k++] = ' ';
+  }
+  newstr[k-1] = '.';
+  newstr[k++] = '\0';
+  printf("%s\n", newstr);   /* 新しい文字列全体を表示 */
+  printf("Total: %d characters\n",(int)strlen(newstr));
+  /* ここで、newstrの文字数を表示 */
+
+  return 0;
+}

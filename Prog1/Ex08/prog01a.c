@@ -1,0 +1,43 @@
+#include<stdio.h>
+
+typedef struct{
+	int  id;       /* ID */
+	char name[20]; /* 名前 */
+	int score;     /* 点数 */
+	char grade;    /* 成績 */
+}Record;
+
+void PrintData1(Record);
+void PrintData2(Record *);
+
+int main(){
+    Record member1 = {
+        1280035,
+        "Nakase Juon",
+        80,
+        'A'
+    },member2 = {
+        1280164,
+        "Kurou Yuhi",
+        75,
+        'B'
+    };
+
+    printf("値渡し\n");
+    PrintData1(member1);
+    PrintData1(member2);
+
+    printf("ポインタ(アドレス)渡し\n");
+    PrintData2(&member1);
+    PrintData2(&member2);
+
+    return 0;
+}
+
+void PrintData1(Record x){
+    printf("%d\t%s %d %c\n",x.id,x.name,x.score,x.grade);
+}
+
+void PrintData2(Record *x){
+    printf("%d\t%s %d %c\n",x->id,x->name,x->score,x->grade);
+}

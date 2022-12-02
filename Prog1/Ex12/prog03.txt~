@@ -1,0 +1,5 @@
+input_planetの戻り値が0の場合
+gcc -DTEST0 prog03_main.c
+
+input_planetの戻り値が-1の場合
+gcc -DTEST1 prog03_main.c

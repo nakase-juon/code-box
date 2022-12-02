@@ -1,0 +1,9 @@
+#include<stdio.h>
+
+int main(){
+  char c;
+  printf("Input a character: ");
+  scanf("%c",&c);
+  printf("ASCII clde of a character '%c' is %d(0x%x).",c,c,c);
+  return 0;
+}

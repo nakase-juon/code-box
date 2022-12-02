@@ -1,0 +1,29 @@
+#include<stdio.h>
+
+int main() {
+  int a,b;
+  scanf("%d %d",&a,&b);
+  int c[a][b];
+  double d[a]={};
+  int sum;
+  printf("科目数:%d, 学生数:%d\n",a,b);
+  for(int i=0;i<a;i++){
+    sum=0;
+    for(int j=0;j<b;j++){
+      scanf("%d",&c[i][j]);
+      d[i]+=c[j][i];
+      sum+=c[i][j];
+      printf("%-5d",c[i][j]);
+      if(j==a-1){
+	printf(":%\n",(double)sum/(double)a);
+      }
+    }
+    
+  }
+  for(int i=0;i<a;i++){
+    printf("%-4.1lf",d[i]/(double)b);
+  }
+  printf("\n");
+  return 0;
+}
+  

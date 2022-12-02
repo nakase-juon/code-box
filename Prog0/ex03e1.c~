@@ -1,0 +1,9 @@
+#include <stdio.h>
+
+int main() {
+  int m,n;
+  printf("整数 m, n を入力してください：");
+  scanf("%lf %lf",&m,&n);
+  printf("%fを%fでわった余りは%fです。\n",m,n,m-((m/n)*n));
+  return 0;
+}
